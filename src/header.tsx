@@ -1,5 +1,5 @@
 import { useUser, useStackApp } from '@stackframe/react';
-import neonLogo from './assets/neon.svg'
+import neonLogo from './assets/neon.svg';
 
 export const Header = () => {
   const app = useStackApp();
@@ -8,27 +8,26 @@ export const Header = () => {
   return (
     <header className="w-full flex justify-between items-center px-6 py-4 z-10">
       <div className="font-medium text-[15px] tracking-tight">
-        <img
-          src={neonLogo}
-          alt="Neon logo"
-          width={102}
-          height={28}
-        />
+        <img src={neonLogo} alt="Neon logo" width={102} height={28} />
       </div>
-      {user? <div className="flex items-center gap-4">
-          <span className='inline-flex h-8 items-end flex-col'>
-          {user.displayName && <span className="text-[14px] text-gray-600 dark:text-gray-300">
-            {`Hello, ${user.displayName}`}
-          </span>}
-          <button
-            type="button"
-            onClick={() => user.signOut()}
-            className="bg-gray-50 px-1 underline text-[11px]  hover:no-underline cursor-pointer"
-          >
-            Sign Out
-          </button>
+      {user ? (
+        <div className="flex items-center gap-4">
+          <span className="inline-flex h-8 items-end flex-col">
+            {user.displayName && (
+              <span className="text-[14px] text-gray-600 dark:text-gray-300">
+                {`Hello, ${user.displayName}`}
+              </span>
+            )}
+            <button
+              type="button"
+              onClick={() => user.signOut()}
+              className="bg-gray-50 px-1 underline text-[11px]  hover:no-underline cursor-pointer"
+            >
+              Sign Out
+            </button>
           </span>
-        </div> :
+        </div>
+      ) : (
         <div className="flex items-center gap-3">
           <button
             type="button"
@@ -45,7 +44,7 @@ export const Header = () => {
             Sign Up
           </button>
         </div>
-}
+      )}
     </header>
   );
-}
+};

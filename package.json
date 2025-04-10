@@ -6,7 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "format": "prettier -c . --log-level warn",
+    "format:fix": "prettier -w . --log-level warn",
+    "lint:ts": "tsc --noEmit",
+    "lint:eslint": "eslint .",
+    "lint:eslint:fix": "eslint --fix .",
+    "lint": "npm-run-all format lint:ts lint:eslint",
+    "lint:fix": "npm-run-all format:fix lint:ts lint:eslint:fix",
+    "prepreview": "npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -23,9 +30,12 @@
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.5.3",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"

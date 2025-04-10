@@ -1,13 +1,12 @@
-import { StackHandler, StackProvider, StackTheme } from "@stackframe/react";
-import { Suspense } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import { stackClientApp } from "./stack";
-import { Header } from "./header";
-import Home from "./Home";
+import { StackHandler, StackProvider, StackTheme } from '@stackframe/react';
+import { Suspense } from 'react';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { stackClientApp } from './stack';
+import Home from './Home';
 
 function HandlerRoutes() {
   const location = useLocation();
-  
+
   return (
     <StackHandler app={stackClientApp} location={location.pathname} fullPage />
   );

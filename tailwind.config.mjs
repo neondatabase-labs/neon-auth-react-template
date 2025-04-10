@@ -1,7 +1,5 @@
 export default {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     colors: {
       black: {
@@ -10,16 +8,16 @@ export default {
         pure: '#000000',
       },
       white: '#ffffff',
-        primary: {
-          1: "#00E599",
-        },
+      primary: {
+        1: '#00E599',
+      },
     },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
       },
     },
   },
   plugins: [],
-} 
+};
